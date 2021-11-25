@@ -1,57 +1,42 @@
 ![Logo Nextale](https://github.com/nextalebr/desafio-backend/blob/master/nextale.jpeg "Nextale")
 
-# Desafio Back-End - Nextale
+## About the vacancy candidate
 
-Esse desafio é parte da fase de seleção de desenvolvedor backend.
-Sua avaliação será dada pelas fases que conseguir entregar e a forma com que foram desenvolvidas.
+My name is João Coelho, Brazilian born in Barbalha a city in the state of Ceará.
+I am passionate about technology and since I was 12 years old I have ventured into the world of programming.
 
-## Pré-requisitos
+## About Project
 
-- Lógica de programação;
-- Conhecimentos sobre Banco de dados;
-- Conhecimentos sobre HTTP, API e REST ;
-- Conhecimentos sobre Git;
+This challenge is part of the backend developer selection phase. Your assessment will be given by the phases you manage to deliver and the way they were developed.
 
-## Requisitos do desafio
+## Comands run project
 
-- Utilizar PHP(7.4)
-- Utilizar Laravel(8) ou Lumen
-- Adicionar no README instruções de como executar o projeto.
-- A API deve receber e retornar dados no formato JSON.
+- $ git clone https://github.com/joaocg/desafio-nextale.git
+- $ cd desafio-nextale
+- $ composer intall
+- $ cp .env.example ./.env
+- $ php artisan key:generate
+- $ php artisan storage:link
+- $ nano or vi .env
 
-## Diferenciais
+Configure the database credentials in the .env file opened with the previous command, save and close file.
 
-- Código limpo
-- Código em Inglês
+- $ php artisan migrate
+- $ php artisan db:seed --class=UserSeeder
+- $ php artisan serve
 
-## Contexto
+## Endpoints
 
-Você recebeu uma demanda para desenvolver um backend para controle interno dos nossos conteúdos, precisamos ter conteúdo em texto e também precisará ser adicionado mídias nesse conteúdo.
+- /api/v1 -> Group routs to api
+- /api/v1/story -> Route, [GET, POST, PUT and DELETE], to listing, create, update and delete of Stories;
+- /api/v1/story/{id} -> Route, [GET], to liting sotiry by id;
+- /api/v1/media -> Route, [GET, POST, PUT and DELETE], to listing, create, update and delete of Medias;
+- /api/v1/media/{id} -> Route, [GET], to liting media by story_id;
 
-### Fase 1 - Contos
+## License
 
-Nesta fase serão implementados os contos do aplicativo e seus endpoints:
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
-- Criar um endpoint onde é cadastrado um conto.
-  - Esses contos devem ter obrigátoriamente os seguintes dados:
-    - **title** | string
-    - **body** | text
-    - **is_enabled** | boolean
-    - **created_at** | datetime
-    - **updated_at** | datetime
-- Criar um endpoint para listagem desses contos, ordernados por ordem de cadastro decrescente (mais novo para mais antigo);
-- Criar um endpoint para listar um único conto através do seu id;
-- Criar um endpoint para editar um único conto através do seu id;
-- Criar um endpoint para excluir um conto através do seu id.
+## Developed with Laravel
 
-### Fase 2 - Midias
-
-Nesta fase serão implementados as midias dos contos, um conto contém várias midias:
-
-- Criar um endpoint onde será possível realizar um upload de um vídeo, música ou imagem com tamanho máximo de 5MB
-- Criar um endpoint onde ao passar o id do conto retorne a url das mídias vinculadas
-- Criar um endpoint onde seja possível excluir uma mídia relacionada a um usuário.
-
-## Ao Concluir
-
-- Após isso envie um e-mail para 'deyvid@nextale.com.br', com o assunto 'DESAFIO BACK-END' com link do seu repositório ou faça um pull request do projeto e currículo em anexo.
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
